@@ -43,9 +43,9 @@ var lists = [{
     domain: 'www.baidu.com',
     key: 'bs'
 }, {
-    domain:'m.baidu.com',
-    key:'word'
-},{
+    domain: 'm.baidu.com',
+    key: 'word'
+}, {
     domain: 'soso',
     key: 'query'
 }, {
@@ -71,21 +71,23 @@ var lists = [{
 function getKey(referrer) {
     referrer = referrer || document.referrer;
     var key = '';
+    var doamin = '';
     for (var i = 0; i < lists.length; i++) {
         var Reg = new RegExp(lists[i]['domain']);
         if (Reg.test(referrer)) {
             key = getQueryStringRegExp(lists[i]['key'], referrer);
             if (key) {
+                domain = lists[i].domain;
                 break;
             }
         }
     }
-    return key;
+    return {
+        domain: domain,
+        key: key
+    }
 }
 
 
 
-rs.search_domain = rf_domain;
-rs.key = getKey();
-module.exports = rs;
 module.exports.getKey = getKey;
