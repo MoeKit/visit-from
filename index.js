@@ -34,9 +34,18 @@ if (referrer) {
 var domain = document.domain;
 
 var lists = [{
-    domain: 'baidu',
+    domain: 'www.baidu.com',
     key: 'wd'
 }, {
+    domain: 'www.baidu.com',
+    key: 'word'
+}, {
+    domain: 'www.baidu.com',
+    key: 'bs'
+}, {
+    domain:'m.baidu.com',
+    key:'word'
+},{
     domain: 'soso',
     key: 'query'
 }, {
@@ -52,18 +61,31 @@ var lists = [{
     domain: 'www.so.com',
     key: 'q'
 }, {
-    domain: '',
-    key: ''
+    domain: 'ly.so.com',
+    key: 'q'
+}, {
+    domain: 'm.sj.sm.cn',
+    key: 'q'
 }];
-var key = '';
-for (var i = 0; i < lists.length; i++) {
-    var Reg = new RegExp(lists[i]['domain']);
-    if (Reg.test(referrer)) {
-        key = getQueryStringRegExp(lists[i]['key'], referrer);
-        break;
+
+function getKey(referrer) {
+    referrer = referrer || document.referrer;
+    var key = '';
+    for (var i = 0; i < lists.length; i++) {
+        var Reg = new RegExp(lists[i]['domain']);
+        if (Reg.test(referrer)) {
+            key = getQueryStringRegExp(lists[i]['key'], referrer);
+            if (key) {
+                break;
+            }
+        }
     }
+    return key;
 }
 
+
+
 rs.search_domain = rf_domain;
-rs.key = key;
+rs.key = getKey();
 module.exports = rs;
+module.exports.getKey = getKey;
