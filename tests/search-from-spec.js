@@ -30,7 +30,7 @@ describe('search-from', function() {
     });
 
     it('google',function(){
-
+        expect(getKey('https://www.google.com.hk/search?newwindow=1&safe=strict&es_sm=122&q=%E6%92%AD%E7%A7%8D%E7%BD%91+%E5%A4%9A%E5%9B%8A&oq=%E6%92%AD%E7%A7%8D%E7%BD%91++%E5%A4%9A&gs_l=serp.3.0.0.23198.25244.0.27062.9.8.1.0.0.1.840.1783.3-1j0j1j1.3.0....0...1c.1j4.47.serp..6.3.1403.4RLpDKFPuZw').key).to.be('播种网 多囊');
     });
 
 });
