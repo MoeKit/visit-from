@@ -22,7 +22,8 @@ if (!referrer) {
             // Safari和Chrome下window.opener.location没有任何属性
             referrer = window.opener.location.href;
         }
-    } catch (e) {}
+    } catch (e) {
+    }
 }
 
 if (referrer) {
@@ -33,40 +34,56 @@ if (referrer) {
 
 var domain = document.domain;
 
-var lists = [{
-    domain: 'www.baidu.com',
-    key: 'wd'
-}, {
-    domain: 'www.baidu.com',
-    key: 'word'
-}, {
-    domain: 'www.baidu.com',
-    key: 'bs'
-}, {
-    domain: 'm.baidu.com',
-    key: 'word'
-}, {
-    domain: 'soso',
-    key: 'query'
-}, {
-    domain: 'sogou',
-    key: 'query'
-}, {
-    domain: 'youdao',
-    key: 'q'
-}, {
-    domain: 'google',
-    key: 'q'
-}, {
-    domain: 'www.so.com',
-    key: 'q'
-}, {
-    domain: 'ly.so.com',
-    key: 'q'
-}, {
-    domain: 'm.sj.sm.cn',
-    key: 'q'
-}];
+var lists = [
+    {
+        domain: 'www.baidu.com',
+        key: 'wd'
+    },
+    {
+        domain: 'www.baidu.com',
+        key: 'word'
+    },
+    {
+        domain: 'www.baidu.com',
+        key: 'bs'
+    },
+    {
+        domain: 'm.baidu.com',
+        key: 'word'
+    },
+    {
+        domain: 'soso',
+        key: 'query'
+    },
+    {
+        domain: 'www.sogou.com',
+        key: 'query'
+    },
+    {
+        domain: 'm.sogou.com',
+        key: 'keyword'
+    },
+    {
+        domain: 'youdao',
+        key: 'q'
+    },
+    {
+        domain: 'google',
+        key: 'q'
+    },
+    {
+        domain: 'www.so.com',
+        key: 'q'
+    },
+    {
+        domain: 'ly.so.com',
+        key: 'q'
+    },
+    {
+        domain: 'm.sj.sm.cn',
+        key: 'q'
+    }
+];
 
 function getKey(referrer) {
     referrer = referrer || document.referrer;
@@ -87,7 +104,6 @@ function getKey(referrer) {
         key: key
     }
 }
-
 
 
 module.exports.getKey = getKey;
