@@ -6,6 +6,6 @@
 
 ````javascript
 seajs.use('index', function(searchFrom) {
-    console.log(searchFrom);
+    console.log(searchFrom.getKey());
 });
 ````

@@ -10,6 +10,8 @@ describe('search-from', function () {
         expect(getKey('http://www.baidu.com/s?bs=怀孕16周').key).to.be('怀孕16周');
         expect(getKey('http://www.baidu.com/baidu?word=J打头的女英文名').key).to.be('J打头的女英文名');
         expect(getKey('http://m.baidu.com/from=1000953b/s?word=三十五周早产').key).to.be('三十五周早产');
+        expect(getKey('http://m.baidu.com/s?tn=zbios').key).to.be('');
+        expect(getKey('http://m.baidu.com/ssid=0/from=0/bd_page_type=1/uid=0/baiduid=E13DD101B3BFCB8717B3106AD76B9E8A/s?word=%E6%92%AD%E7%A7%8D%E7%BD%91&uc_param_str=upssntdnvelami&sa=ib&st_1=111041&st_2=102041&pu=usm%400%2Csz%40224_220%2Cta%40middle___3_537&idx=20000&tn_1=middle&tn_2=middle&ct_1=%E6%90%9C%E7%BD%91%E9%A1%B5').key).to.be('播种网');
     });
 
     it('so', function () {
@@ -32,5 +34,7 @@ describe('search-from', function () {
     it('google', function () {
         expect(getKey('https://www.google.com.hk/search?newwindow=1&safe=strict&es_sm=122&q=%E6%92%AD%E7%A7%8D%E7%BD%91+%E5%A4%9A%E5%9B%8A&oq=%E6%92%AD%E7%A7%8D%E7%BD%91++%E5%A4%9A&gs_l=serp.3.0.0.23198.25244.0.27062.9.8.1.0.0.1.840.1783.3-1j0j1j1.3.0....0...1c.1j4.47.serp..6.3.1403.4RLpDKFPuZw').key).to.be('播种网 多囊');
     });
+
+
 
 });

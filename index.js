@@ -13,8 +13,8 @@ function getQueryStringRegExp(name, url) {
     return "";
 }
 
-var rs = {};
-var referrer = rs.referrer = document.referrer;
+
+var referrer = document.referrer;
 if (!referrer) {
     try {
         if (window.opener) {
@@ -26,13 +26,6 @@ if (!referrer) {
     }
 }
 
-if (referrer) {
-    var rf_domain = referrer.split('/')[2];
-} else {
-    var rf_domain = '';
-}
-
-var domain = document.domain;
 
 var lists = [
     {
@@ -85,14 +78,14 @@ var lists = [
     }
 ];
 
-function getKey(referrer) {
-    referrer = referrer || document.referrer;
+function getKey(url) {
+    url = url || referrer;
     var key = '';
-    var doamin = '';
+    var domain = '';
     for (var i = 0; i < lists.length; i++) {
         var Reg = new RegExp(lists[i]['domain']);
-        if (Reg.test(referrer)) {
-            key = getQueryStringRegExp(lists[i]['key'], referrer);
+        if (Reg.test(url)) {
+            key = getQueryStringRegExp(lists[i]['key'], url);
             if (key) {
                 domain = lists[i].domain;
                 break;
@@ -101,7 +94,8 @@ function getKey(referrer) {
     }
     return {
         domain: domain,
-        key: key
+        key: key,
+        referrer: referrer
     }
 }
 
