@@ -73,6 +73,10 @@ var lists = [
         key: 'q'
     },
     {
+        domain: '360.cn',
+        key: 'q'
+    },
+    {
         domain: 'm.sj.sm.cn',
         key: 'q'
     }
