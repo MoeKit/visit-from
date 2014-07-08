@@ -64,6 +64,7 @@ var lists = [
         domain: 'google',
         key: 'q'
     },
+    // http://www.so.com/s?q=验血结果看男女
     {
         domain: 'www.so.com',
         key: 'q'
@@ -83,6 +84,11 @@ var lists = [
     // ...
     {
         domain: 'sm.cn',
+        key: 'q'
+    },
+    // http://cn.bing.com/search?q=玛特纳 胎停
+    {
+        domain: 'bing.com',
         key: 'q'
     }
 ];
