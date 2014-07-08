@@ -72,12 +72,17 @@ var lists = [
         domain: 'ly.so.com',
         key: 'q'
     },
+    // http://so.360.cn/s?q=精子畸形率95.5
     {
         domain: '360.cn',
         key: 'q'
     },
+    // http://m.sa.sm.cn/s?q=孕期31周心情很不好
+    // http://m.sj.sm.cn/s?q=五个月宝宝一天拉两次屎有泡泡
+    // http://m.yz.sm.cn/s?q=上怀
+    // ...
     {
-        domain: 'm.sj.sm.cn',
+        domain: 'sm.cn',
         key: 'q'
     }
 ];
