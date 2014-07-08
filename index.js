@@ -28,6 +28,7 @@ if (!referrer) {
 
 
 var lists = [
+    // http://www.baidu.com/s?wd=施巴和加州宝宝哪个好
     {
         domain: 'www.baidu.com',
         key: 'wd'
@@ -69,8 +70,23 @@ var lists = [
         domain: 'www.so.com',
         key: 'q'
     },
+    // http://m.so.com/s?q=单岁双月生男孩
+    {
+        domain: 'm.so.com',
+        key: 'q'
+    },
+    // http://image.so.com/v?q=怀孕三个月胎儿图
+    {
+        domain: 'image.so.com',
+        key: 'q'
+    },
     {
         domain: 'ly.so.com',
+        key: 'q'
+    },
+    // other so.com
+    {
+        domain: 'so.com',
         key: 'q'
     },
     // http://so.360.cn/s?q=精子畸形率95.5
